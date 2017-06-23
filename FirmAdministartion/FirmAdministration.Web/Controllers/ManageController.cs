@@ -3,10 +3,12 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Web;
 using System.Web.Mvc;
+using FirmAdministartion.Data.Identity.Config;
 using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.Owin;
 using Microsoft.Owin.Security;
 using FirmAdministration.Web.Models;
+using FirmAdministration.Web.Models.MenageViewModels;
 
 namespace FirmAdministration.Web.Controllers
 {
