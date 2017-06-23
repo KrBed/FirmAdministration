@@ -1,4 +1,7 @@
 ﻿using System;
+using FirmAdministartion.Data.DataAccess;
+using FirmAdministartion.Data.Identity;
+using FirmAdministartion.Data.Identity.Config;
 using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.Owin;
 using Microsoft.Owin;
