@@ -85,7 +85,11 @@ namespace FirmAdministration.Web.Controllers
                 case SignInStatus.Success:
                     if (User.IsInRole("Admin"))
                     {
-                        return RedirectToAdmin();
+                        if (5 == 5)
+                        {
+                            return RedirectToAdmin();
+                        }
+                        
                     }
                     return RedirectToLocal(returnUrl);
                 case SignInStatus.LockedOut:
