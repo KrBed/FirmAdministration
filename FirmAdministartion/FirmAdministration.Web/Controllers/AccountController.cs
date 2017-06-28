@@ -83,6 +83,10 @@ namespace FirmAdministration.Web.Controllers
             switch (result)
             {
                 case SignInStatus.Success:
+                    if (User.IsInRole("Admin"))
+                    {
+                        return RedirectToAdmin();
+                    }
                     return RedirectToLocal(returnUrl);
                 case SignInStatus.LockedOut:
                     return View("Lockout");
