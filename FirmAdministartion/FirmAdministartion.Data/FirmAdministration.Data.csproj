@@ -84,8 +84,22 @@
     <Compile Include="Migrations\201706230717383_Initial.Designer.cs">
       <DependentUpon>201706230717383_Initial.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201706231044540_addDomainClasses.cs" />
+    <Compile Include="Migrations\201706231044540_addDomainClasses.Designer.cs">
+      <DependentUpon>201706231044540_addDomainClasses.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201706231105226_addHistoryToInventory.cs" />
+    <Compile Include="Migrations\201706231105226_addHistoryToInventory.Designer.cs">
+      <DependentUpon>201706231105226_addHistoryToInventory.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201706231139181_IdentityUserProp.cs" />
+    <Compile Include="Migrations\201706231139181_IdentityUserProp.Designer.cs">
+      <DependentUpon>201706231139181_IdentityUserProp.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Services\Abstraction\IUserRepository.cs" />
+    <Compile Include="Services\UserRepository.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
@@ -95,6 +109,21 @@
     <EmbeddedResource Include="Migrations\201706230717383_Initial.resx">
       <DependentUpon>201706230717383_Initial.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201706231044540_addDomainClasses.resx">
+      <DependentUpon>201706231044540_addDomainClasses.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201706231105226_addHistoryToInventory.resx">
+      <DependentUpon>201706231105226_addHistoryToInventory.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201706231139181_IdentityUserProp.resx">
+      <DependentUpon>201706231139181_IdentityUserProp.cs</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\FirmAdministration.Entities\FirmAdministration.Entities.csproj">
+      <Project>{01336465-8c87-4a0d-8ff7-6f2e1ed4ffad}</Project>
+      <Name>FirmAdministration.Entities</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
