@@ -1,4 +1,7 @@
+using System.Data.Entity;
+using System.Data.Entity.ModelConfiguration.Conventions;
 using FirmAdministartion.Data.Identity;
+using FirmAdministration.Entities.DomainModels;
 using Microsoft.AspNet.Identity.EntityFramework;
 
 namespace FirmAdministartion.Data.DataAccess
@@ -12,9 +15,23 @@ namespace FirmAdministartion.Data.DataAccess
         {
         }
 
+        public IDbSet<Inventory> Inventories { get; set; }
+        public IDbSet<History> Histories { get; set; }
+        public IDbSet<InventoryType> InventoryTypes { get; set; }
+        public IDbSet<InventoryHistory> InventoryHistories { get; set; }
+
         public static ApplicationDbContext Create()
         {
             return new ApplicationDbContext();
+        }
+
+        protected override void OnModelCreating(DbModelBuilder modelBuilder)
+        { 
+            modelBuilder.Entity<InventoryHistory>()
+                .HasRequired(i=>i.Inventory)
+                .WithMany()
+                .WillCascadeOnDelete(false);
+            base.OnModelCreating(modelBuilder);
         }
     }
 }
